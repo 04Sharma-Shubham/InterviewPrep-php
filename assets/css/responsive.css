@@ -477,12 +477,340 @@
     }
 }
 
+/* ===== IMAGE RESPONSIVE ENHANCEMENTS ===== */
+
 /* High DPI Displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
     .carousel-slide img,
-    .about-image img {
+    .about-image img,
+    .img-gallery img,
+    .card-img,
+    .hero-img {
         image-rendering: -webkit-optimize-contrast;
         image-rendering: crisp-edges;
+    }
+    
+    /* Enhanced image quality for high DPI */
+    img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: optimize-contrast;
+    }
+    
+    /* Sharper avatars on high DPI */
+    .avatar,
+    .author-avatar {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* ===== RESPONSIVE IMAGE ADJUSTMENTS ===== */
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .img-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+    
+    .card-img {
+        height: 250px;
+    }
+    
+    .hero-img {
+        max-height: 600px;
+    }
+    
+    .avatar-xl {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Desktop (992px to 1199px) */
+@media (max-width: 1199px) {
+    .img-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    
+    .card-img {
+        height: 220px;
+    }
+}
+
+/* Tablet (768px to 991px) */
+@media (max-width: 991px) {
+    /* Image gallery adjustments */
+    .img-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: var(--spacing-sm);
+    }
+    
+    .img-gallery img {
+        height: 150px;
+    }
+    
+    /* Card image adjustments */
+    .card-img {
+        height: 180px;
+    }
+    
+    /* Hero image adjustments */
+    .hero-img {
+        max-height: 400px;
+    }
+    
+    /* Avatar adjustments */
+    .avatar-xl {
+        width: 80px;
+        height: 80px;
+    }
+    
+    .avatar-lg {
+        width: 56px;
+        height: 56px;
+    }
+    
+    /* Image error state adjustments */
+    img::after {
+        font-size: 1.5rem;
+        padding: 1.5rem;
+    }
+    
+    /* Thumbnail adjustments */
+    .img-thumbnail {
+        padding: 3px;
+    }
+}
+
+/* Small Tablet (576px to 767px) */
+@media (max-width: 767px) {
+    /* Image gallery for smaller screens */
+    .img-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xs);
+    }
+    
+    .img-gallery img {
+        height: 120px;
+    }
+    
+    /* Card image adjustments */
+    .card-img {
+        height: 150px;
+    }
+    
+    /* Hero image adjustments */
+    .hero-img {
+        max-height: 300px;
+    }
+    
+    /* Avatar adjustments */
+    .avatar-xl {
+        width: 64px;
+        height: 64px;
+    }
+    
+    .avatar-lg {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .avatar {
+        width: 32px;
+        height: 32px;
+    }
+    
+    /* Figure caption adjustments */
+    figcaption {
+        padding: var(--spacing-xs);
+        font-size: var(--font-size-xs);
+    }
+    
+    /* Image placeholder adjustments */
+    .img-placeholder {
+        font-size: var(--font-size-xs);
+        background-size: 15px 15px;
+    }
+}
+
+/* Mobile (up to 575px) */
+@media (max-width: 575px) {
+    /* Single column image gallery */
+    .img-gallery {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+    
+    .img-gallery img {
+        height: 200px;
+    }
+    
+    /* Card image adjustments */
+    .card-img {
+        height: 120px;
+    }
+    
+    /* Hero image adjustments */
+    .hero-img {
+        max-height: 250px;
+    }
+    
+    /* Avatar adjustments */
+    .avatar-xl {
+        width: 48px;
+        height: 48px;
+    }
+    
+    .avatar-lg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .avatar {
+        width: 28px;
+        height: 28px;
+    }
+    
+    .avatar-sm {
+        width: 24px;
+        height: 24px;
+    }
+    
+    /* Logo adjustments */
+    .logo-img {
+        max-height: 32px;
+    }
+    
+    /* Image error state adjustments */
+    img::before {
+        font-size: var(--font-size-xs);
+        margin-bottom: 5px;
+    }
+    
+    img::after {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+    
+    /* Thumbnail adjustments */
+    .img-thumbnail {
+        padding: 2px;
+    }
+    
+    /* Image shadow effects - reduce on mobile */
+    .img-shadow:hover {
+        transform: none;
+        box-shadow: var(--shadow-medium);
+    }
+    
+    .img-gallery img:hover {
+        transform: scale(1.02);
+    }
+}
+
+/* Extra Small Mobile (up to 375px) */
+@media (max-width: 375px) {
+    /* Further image gallery adjustments */
+    .img-gallery img {
+        height: 150px;
+    }
+    
+    /* Card image adjustments */
+    .card-img {
+        height: 100px;
+    }
+    
+    /* Hero image adjustments */
+    .hero-img {
+        max-height: 200px;
+    }
+    
+    /* Avatar adjustments */
+    .avatar-xl {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .avatar-lg {
+        width: 32px;
+        height: 32px;
+    }
+    
+    .avatar {
+        width: 24px;
+        height: 24px;
+    }
+    
+    .avatar-sm {
+        width: 20px;
+        height: 20px;
+    }
+    
+    /* Logo adjustments */
+    .logo-img {
+        max-height: 28px;
+    }
+    
+    /* Image placeholder adjustments */
+    .img-placeholder {
+        background-size: 10px 10px;
+    }
+}
+
+/* Landscape Mobile - Image optimizations */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero-img {
+        max-height: 200px;
+    }
+    
+    .card-img {
+        height: 100px;
+    }
+    
+    .img-gallery img {
+        height: 100px;
+    }
+}
+
+/* ===== PRINT OPTIMIZATIONS FOR IMAGES ===== */
+@media print {
+    /* Optimize images for print */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+        page-break-inside: avoid;
+        image-rendering: -webkit-optimize-contrast;
+    }
+    
+    .img-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10pt;
+    }
+    
+    .img-gallery img {
+        height: auto;
+        max-height: 200pt;
+    }
+    
+    /* Hide decorative images in print */
+    .hero-img,
+    .card-img-overlay {
+        display: none !important;
+    }
+    
+    /* Simplify avatars for print */
+    .avatar,
+    .avatar-sm,
+    .avatar-lg,
+    .avatar-xl {
+        border: 1pt solid #000;
+        background-color: #f0f0f0 !important;
+    }
+    
+    /* Remove image effects for print */
+    .img-shadow,
+    .img-thumbnail {
+        box-shadow: none !important;
+        border: 1pt solid #ccc !important;
     }
 }
 

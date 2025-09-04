@@ -68,10 +68,268 @@ body {
     overflow-x: hidden;
 }
 
+/* ===== IMAGE STYLES ===== */
 img {
     max-width: 100%;
     height: auto;
     display: block;
+    border: 0;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
+    transition: var(--transition-normal);
+}
+
+/* Image loading state */
+img:not([src]) {
+    visibility: hidden;
+}
+
+img[src=""],
+img:not([src]) {
+    opacity: 0;
+}
+
+/* Image error state */
+img::before {
+    content: "Image failed to load";
+    display: block;
+    margin-bottom: 10px;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+    font-style: italic;
+}
+
+img::after {
+    content: "\f1c5";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 400;
+    display: block;
+    font-size: 2rem;
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--bg-secondary);
+    border: 2px dashed var(--border-color);
+    border-radius: var(--radius-md);
+}
+
+/* Hide error content when image loads successfully */
+img[src]:not([src=""]) {
+    font-size: 0;
+}
+
+img[src]:not([src=""])::before,
+img[src]:not([src=""])::after {
+    display: none;
+}
+
+/* ===== IMAGE UTILITY CLASSES ===== */
+
+/* Responsive image */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Fluid image - takes full width of container */
+.img-fluid {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Cover style - fills container while maintaining aspect ratio */
+.img-cover {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Contain style - fits within container while maintaining aspect ratio */
+.img-contain {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* Rounded corners */
+.img-rounded {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+}
+
+/* Circular image */
+.img-circle {
+    border-radius: 50%;
+    overflow: hidden;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+/* Thumbnail style */
+.img-thumbnail {
+    padding: 4px;
+    background-color: var(--bg-primary);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    max-width: 100%;
+    height: auto;
+    transition: var(--transition-normal);
+}
+
+.img-thumbnail:hover {
+    border-color: var(--primary-color);
+    box-shadow: var(--shadow-medium);
+}
+
+/* Image with shadow */
+.img-shadow {
+    box-shadow: var(--shadow-medium);
+    transition: var(--transition-normal);
+}
+
+.img-shadow:hover {
+    box-shadow: var(--shadow-heavy);
+    transform: translateY(-2px);
+}
+
+/* Lazy loading support */
+.img-lazy {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.img-lazy.loaded {
+    opacity: 1;
+}
+
+/* Image loading placeholder */
+.img-placeholder {
+    background-color: var(--bg-secondary);
+    background-image: linear-gradient(45deg, transparent 35%, rgba(255, 255, 255, 0.5) 35%, rgba(255, 255, 255, 0.5) 65%, transparent 65%);
+    background-size: 20px 20px;
+    animation: loading-shimmer 1.5s infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: var(--font-size-sm);
+}
+
+@keyframes loading-shimmer {
+    0% {
+        background-position: -20px 0;
+    }
+    100% {
+        background-position: 20px 0;
+    }
+}
+
+/* Figure and figcaption styling */
+figure {
+    margin: 0;
+    display: inline-block;
+    max-width: 100%;
+}
+
+figcaption {
+    padding: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    text-align: center;
+    font-style: italic;
+    background-color: var(--bg-secondary);
+    border-radius: 0 0 var(--radius-md) var(--radius-md);
+}
+
+/* Image gallery styles */
+.img-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
+}
+
+.img-gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+    cursor: pointer;
+}
+
+.img-gallery img:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-heavy);
+}
+
+/* Avatar styles */
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--border-color);
+}
+
+.avatar-sm {
+    width: 32px;
+    height: 32px;
+}
+
+.avatar-lg {
+    width: 64px;
+    height: 64px;
+}
+
+.avatar-xl {
+    width: 96px;
+    height: 96px;
+}
+
+/* Logo styles */
+.logo-img {
+    max-height: 40px;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Hero image styles */
+.hero-img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: var(--radius-xl);
+}
+
+/* Card image styles */
+.card-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    display: flex;
+    align-items: flex-end;
+    padding: var(--spacing-lg);
+    color: white;
 }
 
 a {
