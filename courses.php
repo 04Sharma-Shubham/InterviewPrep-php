@@ -108,7 +108,7 @@ require_once 'includes/header.php';
                             <li>✓ Exception handling and best practices</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - $199</a>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - ₹9999</a>
                 </div>
             </div>
             <div class="course-card">
@@ -135,7 +135,7 @@ require_once 'includes/header.php';
                             <li>✓ Common interview patterns and solutions</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - $149</a>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - ₹15999</a>
                 </div>
             </div>
             <div class="course-card">
@@ -162,7 +162,7 @@ require_once 'includes/header.php';
                             <li>✓ 500+ practice problems</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - $299</a>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - ₹19999</a>
                 </div>
             </div>
             <div class="course-card">
@@ -189,7 +189,7 @@ require_once 'includes/header.php';
                             <li>✓ React.js fundamentals</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - $249</a>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - ₹19999</a>
                 </div>
             </div>
             <div class="course-card">
@@ -216,7 +216,7 @@ require_once 'includes/header.php';
                             <li>✓ Common interview questions</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - $99</a>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - ₹7999</a>
                 </div>
             </div>
             <div class="course-card">
@@ -243,7 +243,7 @@ require_once 'includes/header.php';
                             <li>✓ Real system design examples</li>
                         </ul>
                     </div>
-                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - $399</a>
+                    <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Enroll Now - ₹39999</a>
                 </div>
             </div>
         </div>
@@ -269,7 +269,7 @@ require_once 'includes/header.php';
                         <li>Mock Interview Practice</li>
                     </ol>
                     <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                        <strong style="color: var(--secondary-color);">Total: $547 → $399 (Bundle Price)</strong>
+                        <strong style="color: var(--secondary-color);">Total: ₹49999 → ₹39999 (Bundle Price)</strong>
                     </div>
                 </div>
             </div>
@@ -284,7 +284,7 @@ require_once 'includes/header.php';
                         <li>Leadership & Behavioral Prep</li>
                     </ol>
                     <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                        <strong style="color: var(--secondary-color);">Total: $897 → $699 (Bundle Price)</strong>
+                        <strong style="color: var(--secondary-color);">Total: ₹69999 → ₹52999 (Bundle Price)</strong>
                     </div>
                 </div>
             </div>
@@ -299,7 +299,7 @@ require_once 'includes/header.php';
                         <li>Frontend Framework Deep Dive</li>
                     </ol>
                     <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--border-color);">
-                        <strong style="color: var(--secondary-color);">Total: $747 → $549 (Bundle Price)</strong>
+                        <strong style="color: var(--secondary-color);">Total: ₹79999 → ₹59999 (Bundle Price)</strong>
                     </div>
                 </div>
             </div>
@@ -384,7 +384,7 @@ require_once 'includes/header.php';
             <div class="testimonial-card" style="border: 2px solid var(--border-color);">
                 <div class="testimonial-content text-center">
                     <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Individual Course</h3>
-                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">$99 - $399</div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">₹9999 - ₹29999</div>
                     <p style="margin-bottom: 1.5rem;">Perfect for targeting specific skills</p>
                     <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
                         <li style="margin-bottom: 0.5rem;">✓ Single course access</li>
@@ -400,7 +400,7 @@ require_once 'includes/header.php';
                 <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">MOST POPULAR</div>
                 <div class="testimonial-content text-center">
                     <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Learning Path Bundle</h3>
-                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">$399 - $699</div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">₹39999 - ₹59999</div>
                     <p style="margin-bottom: 1.5rem;">Complete structured learning journey</p>
                     <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
                         <li style="margin-bottom: 0.5rem;">✓ 3-4 related courses</li>
@@ -416,7 +416,7 @@ require_once 'includes/header.php';
             <div class="testimonial-card" style="border: 2px solid var(--secondary-color);">
                 <div class="testimonial-content text-center">
                     <h3 style="color: var(--primary-color); margin-bottom: 1rem;">All-Access Pass</h3>
-                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">$999</div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">₹79999</div>
                     <p style="margin-bottom: 1.5rem;">Complete access to everything</p>
                     <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
                         <li style="margin-bottom: 0.5rem;">✓ All current & future courses</li>

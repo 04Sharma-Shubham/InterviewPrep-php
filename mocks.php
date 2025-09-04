@@ -283,7 +283,7 @@ require_once 'includes/header.php';
             <div class="testimonial-card" style="border: 2px solid var(--border-color);">
                 <div class="testimonial-content text-center">
                     <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Single Session</h3>
-                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">$79</div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">₹19999</div>
                     <p style="margin-bottom: 1.5rem;">Perfect for targeted practice</p>
                     <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
                         <li style="margin-bottom: 0.5rem;">✓ 45-60 minute session</li>
@@ -299,7 +299,7 @@ require_once 'includes/header.php';
                 <div style="position: absolute; top: -15px; left: 50%; transform: translateX(-50%); background: var(--primary-color); color: white; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">MOST POPULAR</div>
                 <div class="testimonial-content text-center">
                     <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Interview Package</h3>
-                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">$199</div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">₹19999</div>
                     <p style="margin-bottom: 1.5rem;">Comprehensive preparation</p>
                     <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
                         <li style="margin-bottom: 0.5rem;">✓ 3 mock interview sessions</li>
@@ -315,7 +315,7 @@ require_once 'includes/header.php';
             <div class="testimonial-card" style="border: 2px solid var(--secondary-color);">
                 <div class="testimonial-content text-center">
                     <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Premium Prep</h3>
-                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">$399</div>
+                    <div style="font-size: 2rem; font-weight: 700; color: var(--secondary-color); margin-bottom: 1rem;">₹29999</div>
                     <p style="margin-bottom: 1.5rem;">Complete interview mastery</p>
                     <ul style="list-style: none; padding: 0; text-align: left; margin-bottom: 2rem;">
                         <li style="margin-bottom: 0.5rem;">✓ 6 mock interview sessions</li>
