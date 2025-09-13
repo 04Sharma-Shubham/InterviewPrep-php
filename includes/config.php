@@ -1,42 +1,23 @@
 <?php
-// Site Configuration
-define('SITE_NAME', 'InterviewPrep');
-define('SITE_URL', 'http://localhost/InterviewPrep');
-define('SITE_DESCRIPTION', 'Master your technical interviews with expert guidance and comprehensive preparation');
+// Configuration file for Indie Film Tracker
 
-// Site Settings
-$site_config = [
-    'title' => 'InterviewPrep - Master Your Technical Interviews',
-    'description' => 'Comprehensive interview preparation platform with courses, mock interviews, and expert guidance',
-    'keywords' => 'interview preparation, coding interviews, technical interviews, programming courses, mock interviews',
-    'author' => 'InterviewPrep Team',
-    'version' => '1.0.0'
-];
+// Site configuration
+define('SITE_NAME', 'Indie Film Tracker');
+define('SITE_URL', 'http://localhost');
+define('ADMIN_EMAIL', 'admin@indiefilmtracker.com');
 
-// Navigation Menu
-$nav_menu = [
-    'Home' => 'index.php',
-    'About' => 'about.php',
-    'Courses' => 'courses.php',
-    'Mocks' => 'mocks.php',
-    'Resources' => 'resources.php',
-    'Contact Us' => 'contact.php'
-];
+// Theme configuration
+define('DEFAULT_THEME', 'dark');
 
-// Social Media Links
-$social_links = [
-    'facebook' => 'https://facebook.com/interviewprep',
-    'twitter' => 'https://twitter.com/interviewprep',
-    'linkedin' => 'https://linkedin.com/company/interviewprep',
-    'instagram' => 'https://instagram.com/interviewprep',
-    'youtube' => 'https://youtube.com/interviewprep'
-];
+// Pagination
+define('FILMS_PER_PAGE', 12);
+define('FESTIVALS_PER_PAGE', 8);
 
-// Company Statistics
-$stats = [
-    'total_learners' => 50000,
-    'students_placed' => 15000,
-    'courses_offered' => 25,
-    'mock_interviews' => 100000
-];
+// File paths
+define('DATA_DIR', __DIR__ . '/../data/');
+define('IMAGES_DIR', __DIR__ . '/../assets/images/');
+
+// Error reporting (disable in production)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
 ?>

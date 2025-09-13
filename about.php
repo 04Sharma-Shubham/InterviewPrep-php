@@ -1,245 +1,304 @@
 <?php
-$page_title = 'About Us';
-require_once 'includes/header.php';
+// Include configuration and data
+require_once 'includes/config.php';
+require_once 'includes/data.php';
+
+$page_title = "About - Indie Film Tracker";
+$current_page = 'about';
+
+// Handle contact form submission
+$form_message = '';
+$form_error = '';
+
+if ($_POST) {
+    $name = trim($_POST['name'] ?? '');
+    $email = trim($_POST['email'] ?? '');
+    $subject = trim($_POST['subject'] ?? '');
+    $message = trim($_POST['message'] ?? '');
+    
+    if (empty($name) || empty($email) || empty($subject) || empty($message)) {
+        $form_error = 'Please fill in all fields.';
+    } elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        $form_error = 'Please enter a valid email address.';
+    } else {
+        // In a real application, you would send the email here
+        // For demo purposes, we'll just show a success message
+        $form_message = 'Thank you for your message! We\'ll get back to you soon.';
+        
+        // Clear form data
+        $name = $email = $subject = $message = '';
+    }
+}
 ?>
-
-<!-- Hero Section -->
-<section class="hero">
-    <div class="container">
-        <div class="hero-content">
-            <h1>About InterviewPrep</h1>
-            <p>Empowering careers through expert interview preparation and comprehensive technical training</p>
-        </div>
-    </div>
-</section>
-
-<!-- Company Story Section -->
-<section class="section">
-    <div class="container">
-        <div class="about-company">
-            <div class="about-content animate-fade-in-left">
-                <h2>Our Story</h2>
-                <p>Founded in 2019 by a team of experienced software engineers from top tech companies, InterviewPrep was born out of a simple observation: talented developers were struggling to showcase their skills in technical interviews despite having strong programming abilities.</p>
-                <p>Having conducted hundreds of interviews at companies like Google, Amazon, and Microsoft, our founders recognized the gap between academic knowledge and interview performance. They decided to create a platform that would bridge this gap and help aspiring developers succeed in their career goals.</p>
-                <p>Today, InterviewPrep has grown into a comprehensive learning platform that has helped over 50,000 students land positions at their dream companies. Our success is measured not just in numbers, but in the transformed lives and successful careers of our students.</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $page_title; ?></title>
+    <meta name="description" content="Learn about Indie Film Tracker - your ultimate destination for discovering and tracking independent films, festivals, and screenings.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="dark-theme">
+    <!-- Navigation -->
+    <?php include 'includes/header.php'; ?>
+    
+    <!-- Main Content -->
+    <main style="margin-top: 80px;">
+        <!-- Page Header -->
+        <section class="page-header">
+            <div class="container">
+                <div class="page-header-content">
+                    <h1 class="page-title">About Indie Film Tracker</h1>
+                    <p class="page-subtitle">Your ultimate destination for independent cinema</p>
+                </div>
             </div>
-            <div class="about-images animate-fade-in-right">
-                <div class="about-image">
-                    <div style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        <i class="fas fa-lightbulb"></i>
+        </section>
+
+        <!-- Mission Section -->
+        <section class="mission-section">
+            <div class="container">
+                <div class="mission-content">
+                    <div class="mission-text">
+                        <h2>Our Mission</h2>
+                        <p>Indie Film Tracker is dedicated to celebrating and promoting independent cinema from around the world. We believe that independent films offer unique perspectives, innovative storytelling, and authentic voices that deserve to be discovered and appreciated.</p>
+                        
+                        <p>Our platform serves as a bridge between filmmakers and audiences, providing a comprehensive resource for discovering new films, tracking festival screenings, and connecting with the vibrant indie film community.</p>
+                        
+                        <div class="mission-stats">
+                            <div class="stat-item">
+                                <h3><?php echo count($films_data); ?>+</h3>
+                                <p>Independent Films</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3><?php echo count($festivals_data); ?>+</h3>
+                                <p>Film Festivals</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>50+</h3>
+                                <p>Countries Represented</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mission-image">
+                        <img src="assets/images/about-mission.jpg" alt="Independent Film Scene" class="mission-img">
                     </div>
                 </div>
-                <div class="about-image">
-                    <div style="height: 200px; background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
-                        <i class="fas fa-handshake"></i>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">What We Offer</h2>
+                <div class="features-grid grid grid-3">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-search"></i>
+                        </div>
+                        <h3>Discover Films</h3>
+                        <p>Explore our curated collection of independent films from around the world. Filter by genre, year, country, and more to find your next favorite film.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <h3>Festival Calendar</h3>
+                        <p>Stay updated with upcoming film festivals and screenings. Never miss an opportunity to experience independent cinema in your area.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-bookmark"></i>
+                        </div>
+                        <h3>Personal Watchlist</h3>
+                        <p>Create and manage your personal watchlist. Track films you want to watch and mark those you've already seen.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community</h3>
+                        <p>Connect with fellow indie film enthusiasts. Share recommendations and discover new voices in independent cinema.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Friendly</h3>
+                        <p>Access our platform on any device. Our responsive design ensures a great experience on desktop, tablet, and mobile.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h3>Dark Theme</h3>
+                        <p>Enjoy a cinematic viewing experience with our carefully crafted dark theme designed for film enthusiasts.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- Mission & Vision Section -->
-<section class="section bg-secondary">
-    <div class="container">
-        <div class="courses-grid">
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    <i class="fas fa-bullseye"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Our Mission</h3>
-                    <p>To democratize access to high-quality interview preparation and empower developers worldwide to achieve their career aspirations through comprehensive, practical, and industry-relevant training.</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                    <i class="fas fa-eye"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Our Vision</h3>
-                    <p>To become the global leader in technical interview preparation, creating a world where talent is recognized and rewarded regardless of background, and where every developer has the tools to succeed.</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Our Values</h3>
-                    <p>Excellence, Integrity, Innovation, and Inclusivity. We believe in providing the highest quality education while fostering a supportive and diverse learning community.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Team Section -->
-<section class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Meet Our Expert Team</h2>
-            <p>Industry veterans with experience from top tech companies, dedicated to your success</p>
-        </div>
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="testimonial-author" style="margin-bottom: 1rem;">
-                    <div class="author-avatar" style="background: linear-gradient(135deg, #667eea, #764ba2);">AK</div>
-                    <div class="author-info">
-                        <h4>Alex Kumar</h4>
-                        <p>Founder & CEO</p>
+        <!-- Team Section -->
+        <section class="team-section">
+            <div class="container">
+                <h2 class="section-title">Our Team</h2>
+                <div class="team-grid grid grid-3">
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="assets/images/team-1.jpg" alt="Sarah Chen" class="avatar-img">
+                        </div>
+                        <h3>Sarah Chen</h3>
+                        <p class="member-role">Founder & CEO</p>
+                        <p class="member-bio">Passionate about independent cinema and dedicated to supporting emerging filmmakers.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="assets/images/team-2.jpg" alt="Marcus Rodriguez" class="avatar-img">
+                        </div>
+                        <h3>Marcus Rodriguez</h3>
+                        <p class="member-role">Head of Content</p>
+                        <p class="member-bio">Film critic and curator with over 10 years of experience in independent cinema.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="assets/images/team-3.jpg" alt="Elena Volkov" class="avatar-img">
+                        </div>
+                        <h3>Elena Volkov</h3>
+                        <p class="member-role">Community Manager</p>
+                        <p class="member-bio">Building connections between filmmakers and audiences worldwide.</p>
+                        <div class="member-social">
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
                     </div>
                 </div>
-                <div class="testimonial-content">
-                    <p>Former Senior Software Engineer at Google with 8+ years of experience. Led the development of InterviewPrep's core curriculum and has personally mentored over 1,000 students.</p>
-                </div>
             </div>
-            <div class="testimonial-card">
-                <div class="testimonial-author" style="margin-bottom: 1rem;">
-                    <div class="author-avatar" style="background: linear-gradient(135deg, #f093fb, #f5576c);">SC</div>
-                    <div class="author-info">
-                        <h4>Sarah Chen</h4>
-                        <p>Co-Founder & CTO</p>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" id="contact">
+            <div class="container">
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h2>Get in Touch</h2>
+                        <p>Have questions, suggestions, or want to collaborate? We'd love to hear from you!</p>
+                        
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <h4>Email</h4>
+                                    <p>hello@indiefilmtracker.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <div>
+                                    <h4>Phone</h4>
+                                    <p>+1 (555) 123-4567</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <h4>Address</h4>
+                                    <p>123 Film Street<br>Los Angeles, CA 90210</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <h4>Follow Us</h4>
+                            <div class="social-icons">
+                                <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                                <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-form-container">
+                        <form class="contact-form" method="POST" action="#contact">
+                            <h3>Send us a Message</h3>
+                            
+                            <?php if ($form_message): ?>
+                            <div class="form-message success">
+                                <i class="fas fa-check-circle"></i>
+                                <?php echo $form_message; ?>
+                            </div>
+                            <?php endif; ?>
+                            
+                            <?php if ($form_error): ?>
+                            <div class="form-message error">
+                                <i class="fas fa-exclamation-circle"></i>
+                                <?php echo $form_error; ?>
+                            </div>
+                            <?php endif; ?>
+                            
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" value="<?php echo htmlspecialchars($name ?? ''); ?>" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($email ?? ''); ?>" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Subject *</label>
+                                <input type="text" id="subject" name="subject" value="<?php echo htmlspecialchars($subject ?? ''); ?>" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required><?php echo htmlspecialchars($message ?? ''); ?></textarea>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i>
+                                Send Message
+                            </button>
+                        </form>
                     </div>
                 </div>
-                <div class="testimonial-content">
-                    <p>Ex-Amazon Principal Engineer with expertise in system design and scalable architectures. Specializes in preparing students for senior-level technical interviews.</p>
-                </div>
             </div>
-            <div class="testimonial-card">
-                <div class="testimonial-author" style="margin-bottom: 1rem;">
-                    <div class="author-avatar" style="background: linear-gradient(135deg, #4facfe, #00f2fe);">RP</div>
-                    <div class="author-info">
-                        <h4>Raj Patel</h4>
-                        <p>Head of Curriculum</p>
-                    </div>
-                </div>
-                <div class="testimonial-content">
-                    <p>Former Microsoft Senior Program Manager with a passion for education. Designs comprehensive learning paths and ensures our content stays current with industry trends.</p>
-                </div>
-            </div>
-            <div class="testimonial-card">
-                <div class="testimonial-author" style="margin-bottom: 1rem;">
-                    <div class="author-avatar" style="background: linear-gradient(135deg, #43e97b, #38f9d7);">MJ</div>
-                    <div class="author-info">
-                        <h4>Maria Johnson</h4>
-                        <p>Lead Instructor</p>
-                    </div>
-                </div>
-                <div class="testimonial-content">
-                    <p>Former Facebook Software Engineer with expertise in algorithms and data structures. Known for her ability to simplify complex concepts and make learning enjoyable.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
+    </main>
 
-<!-- Achievements Section -->
-<section class="stats-section">
-    <div class="container">
-        <div class="section-title" style="color: white; margin-bottom: 3rem;">
-            <h2>Our Achievements</h2>
-            <p>Numbers that reflect our commitment to student success</p>
-        </div>
-        <div class="stats-grid">
-            <div class="stat-item">
-                <span class="stat-number" data-target="50000">0</span>
-                <span class="stat-label">Students Trained</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="15000">0</span>
-                <span class="stat-label">Successful Placements</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="500">0</span>
-                <span class="stat-label">Partner Companies</span>
-            </div>
-            <div class="stat-item">
-                <span class="stat-number" data-target="98">0</span>
-                <span class="stat-label">Success Rate %</span>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- Footer -->
+    <?php include 'includes/footer.php'; ?>
 
-<!-- Why Choose Us Section -->
-<section class="section">
-    <div class="container">
-        <div class="section-title">
-            <h2>Why Choose InterviewPrep?</h2>
-            <p>What sets us apart from other interview preparation platforms</p>
-        </div>
-        <div class="courses-grid">
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    <i class="fas fa-users-cog"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Industry Expert Instructors</h3>
-                    <p>Learn from professionals who have worked at top tech companies and have conducted hundreds of real interviews.</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                    <i class="fas fa-chart-line"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Personalized Learning Path</h3>
-                    <p>Customized curriculum based on your current skill level, target companies, and career goals.</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    <i class="fas fa-video"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Real Mock Interviews</h3>
-                    <p>Practice with actual interview scenarios and receive detailed feedback to improve your performance.</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
-                    <i class="fas fa-code"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Interactive Coding Platform</h3>
-                    <p>Practice coding problems in our advanced IDE with real-time feedback and performance analytics.</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Career Support</h3>
-                    <p>Resume review, LinkedIn optimization, and job referrals to help you land your dream position.</p>
-                </div>
-            </div>
-            <div class="course-card">
-                <div class="course-image" style="background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <div class="course-content">
-                    <h3>Flexible Learning</h3>
-                    <p>Self-paced courses with lifetime access, allowing you to learn at your own schedule and revisit content anytime.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Contact CTA Section -->
-<section class="section bg-secondary">
-    <div class="container">
-        <div class="text-center">
-            <h2 style="margin-bottom: 1rem;">Ready to Start Your Journey?</h2>
-            <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-secondary);">Join thousands of successful developers who have transformed their careers with InterviewPrep</p>
-            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                <a href="courses.php" class="btn btn-primary">Explore Courses</a>
-                <a href="contact.php" class="btn btn-outline">Contact Us</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<?php require_once 'includes/footer.php'; ?>
+    <!-- JavaScript -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

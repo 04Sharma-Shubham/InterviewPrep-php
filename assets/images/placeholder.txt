@@ -1,0 +1,44 @@
+# Image Placeholders
+
+This directory should contain the following images for the website to display properly:
+
+## Hero Images
+- hero-film.jpg (1920x1080) - Main hero banner image
+
+## Film Posters
+- posters/last-light.jpg (300x450) - The Last Light poster
+- posters/urban-echoes.jpg (300x450) - Urban Echoes poster
+- posters/silent-dreams.jpg (300x450) - Silent Dreams poster
+- posters/digital-nomads.jpg (300x450) - Digital Nomads poster
+- posters/night-shift.jpg (300x450) - Night Shift poster
+- posters/mountain-pass.jpg (300x450) - Mountain Pass poster
+- posters/coffee-shop.jpg (300x450) - Coffee Shop Chronicles poster
+- posters/forgotten-city.jpg (300x450) - The Forgotten City poster
+- posters/electric-dreams.jpg (300x450) - Electric Dreams poster
+- posters/last-dance.jpg (300x450) - The Last Dance poster
+- posters/underground.jpg (300x450) - Underground poster
+- posters/desert-winds.jpg (300x450) - Desert Winds poster
+
+## About Page Images
+- about-mission.jpg (800x600) - Mission section image
+- team-1.jpg (300x300) - Sarah Chen avatar
+- team-2.jpg (300x300) - Marcus Rodriguez avatar
+- team-3.jpg (300x300) - Elena Volkov avatar
+
+## Image Sources
+You can find suitable images from:
+- Unsplash (unsplash.com)
+- Pexels (pexels.com)
+- Pixabay (pixabay.com)
+
+Make sure to use images that are:
+- High quality and properly sized
+- Free to use (check licensing)
+- Relevant to independent cinema
+- Consistent in style and tone
+
+## Fallback
+If images are not available, the website will still function but may show broken image icons. Consider using placeholder services like:
+- placeholder.com
+- picsum.photos
+- via.placeholder.com
